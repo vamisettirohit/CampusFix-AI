@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "campusfix-ai-response.schema.json",
+  "title": "CampusFix AI response",
+  "description": "Structured response contract used by the CampusFix AI LLM backend.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "answer": {
+      "type": "string",
+      "description": "The direct, helpful response to the user's question."
+    },
+    "category": {
+      "type": "string",
+      "description": "Identified campus IT issue category or general IT."
+    },
+    "disposal_method": {
+      "type": "string",
+      "description": "Relevant troubleshooting or safety guidance."
+    },
+    "next_step": {
+      "type": "string",
+      "description": "The next practical troubleshooting action for the user."
+    },
+    "resolved": {
+      "type": "boolean",
+      "description": "Whether the user has confirmed that the issue is fixed."
+    },
+    "needs_escalation": {
+      "type": "boolean",
+      "description": "Whether the issue should be escalated to campus IT."
+    },
+    "ticket_summary": {
+      "type": "string",
+      "description": "A concise summary suitable for an IT support ticket."
+    }
+  },
+  "required": ["answer", "category", "disposal_method", "next_step", "resolved", "needs_escalation", "ticket_summary"]
+}

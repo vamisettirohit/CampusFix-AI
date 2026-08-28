@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampusFix AI campus IT support assistant.">
+  <title>CampusFix AI - Campus IT Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-screen" id="authScreen">
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="circuit circuit-one" aria-hidden="true"></div>
+    <div class="circuit circuit-two" aria-hidden="true"></div>
+    <div class="particle-field" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <main class="auth-card" aria-labelledby="authTitle">
+      <div class="auth-brand">
+        <div class="ai-logo" aria-hidden="true"><span class="logo-ring"></span><span class="logo-core">✦</span><b class="sparkle sparkle-one">+</b><b class="sparkle sparkle-two">✦</b></div>
+        <span class="auth-brand-name">CampusFix <em>AI</em></span>
+        <span class="secure-label"><span></span> SECURE CAMPUS ACCESS</span>
+      </div>
+      <div class="auth-heading">
+        <p class="auth-kicker">AUTONOMOUS IT SUPPORT AGENT</p>
+        <h1 id="authTitle">Welcome to CampusFix AI</h1>
+        <p>Your intelligent campus IT support assistant</p>
+      </div>
+      <form class="login-form" id="loginForm">
+        <label for="loginUserType">User type<select id="loginUserType" name="user_type" required><option value="student">Student</option><option value="faculty">Faculty</option><option value="staff">Staff</option></select></label>
+        <label for="loginNumber">Registration or employee number<div class="input-shell"><span>#</span><input id="loginNumber" name="registration_number" autocomplete="username" placeholder="e.g. 24CS1042" required></div></label>
+        <label for="loginPassword">Password<div class="input-shell"><span>••</span><input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="6" required><button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password">◉</button></div></label>
+        <div class="login-options"><label class="remember-option"><input type="checkbox" id="rememberMe" name="remember"><span class="checkmark"></span>Remember me</label><a href="#" id="forgotPassword">Forgot Password?</a></div>
+        <p class="login-error" id="loginError" role="alert"></p>
+        <button class="login-button" id="loginButton" type="submit"><span>Login to CampusFix AI</span><strong>↗</strong></button>
+      </form>
+      <p class="auth-footnote"><span class="lock-icon">⌑</span> Your campus identity is protected with secure access controls.</p>
+    </main>
+    <p class="auth-status">CAMPUSFIX AI <span>•</span> SYSTEM ONLINE <span class="status-pulse"></span></p>
+  </div>
+
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="#" aria-label="CampusFix AI home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>CampusFix AI</span>
+        </a>
+        <button class="icon-button sidebar-close" id="closeSidebar" type="button" aria-label="Close navigation">&times;</button>
+      </div>
+
+      <button class="new-chat-button" id="newChatButton" type="button"><span>+</span> New conversation</button>
+
+      <nav class="conversation-nav" aria-label="Recent conversations">
+        <p class="nav-label">Recent</p>
+        <button class="conversation active" type="button"><span class="conversation-icon">✦</span><span class="conversation-title">A fresh start</span><span class="conversation-more">•••</span></button>
+        <button class="conversation" type="button"><span class="conversation-icon">◌</span><span class="conversation-title">Campus IT support</span><span class="conversation-more">•••</span></button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="usage-card"><div class="usage-top"><span>Monthly usage</span><strong>42%</strong></div><div class="usage-bar"><span></span></div><p>1,240 of 3,000 messages</p></div>
+        <button class="account-row" type="button"><span class="avatar" id="accountAvatar">?</span><span class="account-copy"><strong id="accountName">New user</strong><small id="accountType">Complete setup</small></span><span class="account-chevron">⌄</span></button>
+      </div>
+    </aside>
+
+    <main class="chat-panel">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="openSidebar" type="button" aria-label="Open navigation">☰</button>
+        <div class="model-picker"><span class="status-dot"></span><strong>CampusFix AI</strong><span class="caret">⌄</span></div>
+        <div class="topbar-actions"><button class="icon-button" type="button" aria-label="Share conversation">↗</button><button class="icon-button" type="button" aria-label="More options">•••</button></div>
+      </header>
+
+      <section class="conversation-view" aria-label="Chat conversation">
+        <div class="date-stamp">Today <span></span></div>
+        <div class="welcome-block" id="welcomeBlock"><div class="welcome-orb">✦</div><p class="eyebrow">Your campus IT support assistant</p><h1>Welcome to<br><em>CampusFix.</em></h1><p class="welcome-copy" id="welcomeCopy">Before we start, tell me who you are so I can personalize your IT support.</p><form class="onboarding-form" id="onboardingForm"><label for="nameInput">Your name<input id="nameInput" name="name" autocomplete="name" required></label><label for="userTypeInput">User type<select id="userTypeInput" name="user_type" required><option value="">Choose one</option><option value="student">Student</option><option value="employee">Employee</option></select></label><label for="registrationInput">Registration or employee number<input id="registrationInput" name="registration_number" autocomplete="off" required></label><p class="form-error" id="formError" role="alert"></p><button type="submit">Start IT support <span>↗</span></button></form></div>
+
+        <div class="message-list" id="messageList">
+          <article class="message assistant-message"><div class="message-meta"><span class="assistant-avatar">✦</span><strong>CampusFix AI</strong><time>now</time></div><div class="message-body"><p>Once your details are saved, describe the campus IT problem you are facing. Please do not share passwords or one-time codes.</p></div></article>
+        </div>
+
+        <div class="composer-wrap" id="composerWrap"><div class="suggestions"><button type="button">My Wi-Fi is not working <span>↗</span></button><button type="button">I cannot log in <span>↗</span></button><button type="button">The campus printer is stuck <span>↗</span></button></div><div class="image-tools"><input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden><button type="button" class="upload-image-button" id="uploadImageButton">📷 Upload Error Screenshot</button><div class="image-preview-wrap is-locked" id="imagePreviewWrap"><img id="imagePreview" alt="Selected error screenshot preview"><button type="button" class="analyze-image-button" id="analyzeImageButton">Analyze Error</button></div><p class="image-status" id="imageStatus" role="status" aria-live="polite"></p></div><form class="composer" id="composer"><textarea id="messageInput" rows="1" placeholder="Message CampusFix AI..." aria-label="Message CampusFix AI"></textarea><div class="composer-tools"><div><button type="button" class="tool-button" aria-label="Attach a file">⊕</button><button type="button" class="tool-button microphone-button" id="microphoneButton" aria-label="Start voice input" title="Start voice input">🎤</button><span class="listening-status" id="listeningStatus" role="status" aria-live="polite"></span><span class="demo-label">Campus IT support</span></div><button class="send-button" id="sendButton" type="submit" aria-label="Send message">↑</button></div></form><p class="composer-note">Do not share passwords or one-time codes.</p></div>
+      </section>
+    </main>
+  </div>
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <script src="script.js"></script>
+</body>
+</html>
